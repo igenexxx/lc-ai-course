@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import PageHeader from "../components/PageHeader";
-import PromptBox from "../components/PromptBox";
-import ResultWithSources from "../components/ResultWithSources";
-import Title from "../components/Title";
-import TwoColumnLayout from "../components/TwoColumnLayout";
+import React, { useState } from 'react';
+import PageHeader from '../components/PageHeader';
+import PromptBox from '../components/PromptBox';
+import ResultWithSources from '../components/ResultWithSources';
+import Title from '../components/Title';
+import TwoColumnLayout from '../components/TwoColumnLayout';
 
 /**
  *
@@ -17,7 +17,7 @@ import TwoColumnLayout from "../components/TwoColumnLayout";
 const VideoChat = () => {
   // We'll set a default YouTube video so we don't have to copy and paste this every time
   const [prompt, setPrompt] = useState(
-    "https://www.youtube.com/watch?v=0lJKucu6HJc"
+    'https://www.youtube.com/watch?v=Q-Zmc0E0GYY&list=PLyuRouwmQCjkrbkLxphTrIA_9ZUA-vppS',
   );
   const [error, setError] = useState(null);
   const [firstMsg, setFirstMsg] = useState(true);
@@ -26,7 +26,7 @@ const VideoChat = () => {
   const [messages, setMessages] = useState([
     {
       text: "Hi there! I'm YT chatbot. Please provide a YouTube video URL and I'll answer any questions you have.",
-      type: "bot",
+      type: 'bot',
     },
   ]);
 
@@ -40,15 +40,12 @@ const VideoChat = () => {
   const handleSubmit = async () => {
     try {
       // Push the user's message into the messages array
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { text: prompt, type: "user", sourceDocuments: null },
-      ]);
+      setMessages((prevMessages) => [...prevMessages, { text: prompt, type: 'user', sourceDocuments: null }]);
 
       const response = await fetch(`/api/video-chat`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ prompt: prompt, firstMsg }),
       });
@@ -65,16 +62,16 @@ const VideoChat = () => {
         ...prevMessages,
         {
           text: searchRes.output.text,
-          type: "bot",
+          type: 'bot',
         },
       ]);
 
-      setPrompt("");
+      setPrompt('');
       setFirstMsg(false);
-      setError("");
+      setError('');
     } catch (err) {
       console.error(err);
-      setError("Error fetching transcript. Please try again.");
+      setError('Error fetching transcript. Please try again.');
     }
   };
 
@@ -100,8 +97,8 @@ const VideoChat = () => {
               handleSubmit={handleSubmit}
               placeHolderText={
                 messages.length === 1
-                  ? "Enter a youtube url, e.g., https://www.youtube.com/watch?v=O_9JoimRj8w"
-                  : "Ask a follow up question"
+                  ? 'Enter a youtube url, e.g., https://www.youtube.com/watch?v=O_9JoimRj8w'
+                  : 'Ask a follow up question'
               }
               error={error}
             />

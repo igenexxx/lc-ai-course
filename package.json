@@ -35,6 +35,7 @@
     "@types/node": "20.1.0",
     "@types/react": "18.2.6",
     "express-sse": "^0.5.3",
+    "prettier": "^3.0.0",
     "typescript": "5.0.4"
   }
 }
