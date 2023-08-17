@@ -1,3 +1,3 @@
 export default function extractVideoId(url) {
-  // do stuff
+  return new URLSearchParams(new URL(url).search).get('v');
 }

@@ -16,6 +16,7 @@ const nextConfig = {
     PINECONE_API_KEY: process.env.PINECONE_API_KEY,
     PINECONE_INDEX: process.env.PINECONE_INDEX,
     PINECONE_ENVIRONMENT: process.env.PINECONE_ENVIRONMENT,
+    GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
   },
 };
 

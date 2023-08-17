@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../angular-open-ai/.idea/angular-open-ai.iml" filepath="$PROJECT_DIR$/../angular-open-ai/.idea/angular-open-ai.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/openai-javascript-course.iml" filepath="$PROJECT_DIR$/.idea/openai-javascript-course.iml" />
     </modules>
   </component>
